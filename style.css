@@ -1,3 +1,36 @@
-h1, h2 {
+h1,
+h2 {
   font-family: Lato;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(100px, 1fr));
+  max-width: 100%;
+  border: 1px solid #ccc;
+}
+
+.table-header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(100px, 1fr));
+  background-color: #f1f1f1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.table-body {
+  max-height: 300px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+
+.table-row {
+  display: contents;
+}
+
+.table-cell {
+  border: 1px solid #ccc;
+  text-align: center;
+  min-width: 100px;
 }
