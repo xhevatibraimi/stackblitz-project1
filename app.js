@@ -44,7 +44,7 @@ class App {
   }
 
   render() {
-    return `<h1>JS Starter</h1>`;
+    return `<h1>Hello World!</h1>`;
   }
 }
 
