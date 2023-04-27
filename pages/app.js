@@ -3,44 +3,11 @@ import { Api } from '../services/api';
 class App {
   constructor() {
     this.array = [];
-    this.service = new Api();
+    this.api = new Api();
   }
 
-  init() {
-    this.array = [
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-    ];
+  async init() {
+    this.array = await this.api.getData();
   }
 
   render() {
