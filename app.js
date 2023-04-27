@@ -1,9 +1,9 @@
-import { Service } from './service';
+import { Api } from './services/api';
 
 class App {
   constructor() {
     this.array = [];
-    this.service = new Service();
+    this.service = new Api();
   }
 
   init() {
