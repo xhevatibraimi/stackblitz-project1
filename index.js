@@ -1,6 +1,5 @@
-// Import stylesheets
 import './style.css';
-import { App } from './app';
+import { App } from './pages/app';
 
 const app = new App();
 app.init();
