@@ -4,13 +4,10 @@ body {
 
 .table-responsive {
   overflow-x: auto;
-  max-height: 200px;
 }
 
 .table-responsive > table {
   border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
   border: 1px solid lightgray;
 }
 
@@ -19,4 +16,14 @@ body {
   top: 0;
   z-index: 1;
   background: lightgray;
+}
+
+.table-responsive table th,
+.table-responsive table tbody td {
+  text-align: center;
+}
+
+.table-points {
+  max-width: 200px;
+  max-height: 200px;
 }
