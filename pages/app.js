@@ -1,17 +1,19 @@
-import { Api } from '../services/api';
-
 class App {
-  constructor() {
-    this.array = [];
-    this.api = new Api();
+  constructor(api) {
+    this.api = api;
+    this.debts = [];
   }
 
   async init() {
-    this.array = await this.api.getData();
+    this.debts = await this.api.getJson();
   }
 
   render() {
-    return `<h1>Hello World!</h1>`;
+    let debtsList = '';
+    for (const debt in this.debts) {
+      debtsList += `<li>${debt.name}</li>`;
+    }
+    return `<ul>${debtsList}</ul>`;
   }
 }
 

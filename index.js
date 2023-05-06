@@ -1,7 +1,9 @@
 import './style.css';
 import { App } from './pages/app';
+import { Api } from './services/api';
 
-const app = new App();
+const api = new Api();
+const app = new App(api);
 app.init();
 
 const appDiv = document.getElementById('app');

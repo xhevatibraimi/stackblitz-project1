@@ -1,43 +1,17 @@
 class Api {
-  constructor() {
-    this.array = [
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-      {
-        name: 'name 1',
-        amount: 100,
-      },
-    ];
+  urls = {
+    debts:
+      'https://my-json-server.typicode.com/xhevatibraimi/stackblitz-project1/debts',
+  };
+
+  constructor() {}
+
+  async getJson(url) {
+    return (await window.fetch(url)).json();
   }
 
-  getData() {
-    return new Promise((resolve, reject) => resolve(this.data));
+  getDebts() {
+    return this.getJson(urls['debts']);
   }
 }
 
