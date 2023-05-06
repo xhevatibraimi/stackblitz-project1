@@ -9,13 +9,12 @@ class App extends HtmlComponent {
 
   async initAsync() {
     this.debts = await this.api.getDebts();
-    console.log(this.debts);
   }
 
   async templateAsync() {
     let debtsList = '';
-    for (const debt in this.debts) {
-      debtsList += `<li>${debt.name}</li>`;
+    for (const debt of this.debts) {
+      debtsList += `<li>${debt.amount}(${debt.name})</li>`;
     }
     return `<ul>${debtsList}</ul>`;
   }
