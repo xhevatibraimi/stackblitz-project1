@@ -8,7 +8,9 @@ class HtmlComponent {
   }
 
   async renderAsync() {
-    await init();
-    return await template();
+    await this.initAsync();
+    return await this.templateAsync();
   }
 }
+
+export { HtmlComponent };
