@@ -1,34 +1,22 @@
-h1,
-h2 {
-  font-family: Lato;
-}
-.table {
-  display: flex;
-  flex-direction: column;
-  overflow-x: auto;
-  overflow-y: hidden;
+body {
+  font-family: Consolas;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
+.table-responsive {
+  overflow-x: auto;
+  max-height: 200px;
+}
+
+.table-responsive > table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid lightgray;
+}
+
+.table-responsive table th {
   position: sticky;
   top: 0;
-  background-color: #eee;
-}
-
-.body {
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.cell {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ddd;
+  z-index: 1;
+  background: lightgray;
 }
