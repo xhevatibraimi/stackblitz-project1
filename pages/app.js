@@ -5,7 +5,8 @@ class App {
   }
 
   async init() {
-    this.debts = await this.api.getJson();
+    this.debts = await this.api.getDebts();
+    console.log(this.debts);
   }
 
   render() {

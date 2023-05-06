@@ -11,7 +11,7 @@ class Api {
   }
 
   getDebts() {
-    return this.getJson(urls['debts']);
+    return this.getJson(this.urls['debts']);
   }
 }
 
