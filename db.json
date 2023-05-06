@@ -1,0 +1,15 @@
+{
+  "debts": [
+    {
+      "name": "bank",
+      "type": "loan",
+      "amount": 1000,
+      "interestRate": 3
+    },
+    {
+      "name": "friend",
+      "type": "lend",
+      "amount": 1000
+    }
+  ]
+}
