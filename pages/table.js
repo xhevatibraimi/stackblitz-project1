@@ -31,7 +31,7 @@ class Table extends HtmlComponent {
   async templateAsync() {
     const thead = await this.tableHeader();
     const tbody = await this.tableBody();
-    return `<div class="table-responsive table-points"><table>${thead}${tbody}</table></div>`;
+    return `<table>${thead}${tbody}</table>`;
   }
 }
 
