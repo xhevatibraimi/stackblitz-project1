@@ -6,12 +6,10 @@ class App extends HtmlComponent {
     this.table = table;
   }
 
-  async initAsync() {
-    this.debts = await this.api.getDebts();
-  }
+  async initAsync() {}
 
   async templateAsync() {
-    return `<div class="table-responsive table-points">${await table.renderAsync()}</div>`;
+    return `<div class="table-responsive table-points">${await this.table.renderAsync()}</div>`;
   }
 }
 
