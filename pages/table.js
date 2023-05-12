@@ -5,18 +5,33 @@ class Table extends HtmlComponent {
     super();
     this.api = api;
     this.debts = [];
+    this.headers = [{ text: 'Name' }, { text: 'Amount' }];
   }
 
   async initAsync() {
     this.debts = await this.api.getDebts();
   }
 
-  async templateAsync() {
-    let debtsList = '';
+  async tableHeader() {
+    let headersHtml = '';
     for (const debt of this.debts) {
-      debtsList += `<li>${debt.amount}(${debt.name})</li>`;
+      headersHtml += `<th>${debt.amount}(${debt.name})</th>`;
     }
-    return `<tbody>${debtsList}</tbody>`;
+    return `<thead><tr>${headersHtml}</tr></thead>`;
+  }
+
+  async tableBody() {
+    let rowsHtml = '';
+    for (const debt of this.debts) {
+      rowsHtml += `<tr><td>${debt.name}</td><td>(${debt.amount})</td></tr>`;
+    }
+    return `<tbody>${rowsHtml}</tbody>`;
+  }
+
+  async templateAsync() {
+    const thead = await this.tableHeader();
+    const tbody = await this.tableBody();
+    return `<table>${thead}${tbody}</table>`;
   }
 }
 
