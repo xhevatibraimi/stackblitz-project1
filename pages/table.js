@@ -1,14 +1,11 @@
 import { HtmlComponent } from '../core/html-component';
 
 class Table extends HtmlComponent {
-  constructor(datasource) {
+  constructor(datasource, headers) {
     super();
     this.datasource = datasource;
     this.datasource = [];
-    this.headers = [
-      { text: 'Name', key: 'name' },
-      { text: 'Amount', key: 'amount' },
-    ];
+    this.headers = headers;
   }
 
   async initAsync() {}

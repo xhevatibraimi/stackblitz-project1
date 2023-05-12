@@ -11,6 +11,10 @@ class App extends HtmlComponent {
 
   async initAsync() {
     this.debts = await this.api.getDebts();
+    this.table.headers = [
+      { text: 'Name', key: 'name' },
+      { text: 'Amount', key: 'amount' },
+    ];
   }
 
   async templateAsync() {
