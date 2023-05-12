@@ -1,20 +1,18 @@
 import { HtmlComponent } from '../core/html-component';
 
 class Table extends HtmlComponent {
-  constructor(api) {
+  constructor(datasource) {
     super();
-    this.api = api;
-    this.debts = [];
+    this.datasource = datasource;
+    this.datasource = [];
     this.headers = [{ text: 'Name' }, { text: 'Amount' }];
   }
 
-  async initAsync() {
-    this.debts = await this.api.getDebts();
-  }
+  async initAsync() {}
 
   async tableHeader() {
     let headersHtml = '';
-    for (const debt of this.debts) {
+    for (const debt of this.datasource) {
       headersHtml += `<th>${debt.amount}(${debt.name})</th>`;
     }
     return `<thead><tr>${headersHtml}</tr></thead>`;
@@ -22,7 +20,7 @@ class Table extends HtmlComponent {
 
   async tableBody() {
     let rowsHtml = '';
-    for (const debt of this.debts) {
+    for (const debt of this.datasource) {
       rowsHtml += `<tr><td>${debt.name}</td><td>(${debt.amount})</td></tr>`;
     }
     return `<tbody>${rowsHtml}</tbody>`;
