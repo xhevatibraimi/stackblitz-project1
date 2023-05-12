@@ -4,8 +4,7 @@ import { Table } from './pages/table';
 import { Api } from './services/api';
 
 const api = new Api();
-const table = new Table(api);
-const app = new App(table);
+const app = new App(api);
 const appDiv = document.getElementById('app');
 
 (async () => {
