@@ -14,7 +14,7 @@ class App extends HtmlComponent {
   }
 
   async templateAsync() {
-    this.table.datasource = debts;
+    this.table.datasource = this.debts;
     return `<div class="table-responsive table-points">${await this.table.renderAsync()}</div>`;
   }
 }
