@@ -1,10 +1,9 @@
 import './style.css';
-import { App } from './pages/app';
+import { Table } from './pages/table';
 import { Api } from './services/api';
 
 const api = new Api();
-const app = new App(api);
-
+const app = new Table(api);
 const appDiv = document.getElementById('app');
 
 (async () => {

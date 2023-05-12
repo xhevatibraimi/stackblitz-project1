@@ -1,6 +1,6 @@
 import { HtmlComponent } from '../core/html-component';
 
-class App extends HtmlComponent {
+class Table extends HtmlComponent {
   constructor(api) {
     super();
     this.api = api;
@@ -16,8 +16,8 @@ class App extends HtmlComponent {
     for (const debt of this.debts) {
       debtsList += `<li>${debt.amount}(${debt.name})</li>`;
     }
-    return `<ul>${debtsList}</ul>`;
+    return `<tbody>${debtsList}</tbody>`;
   }
 }
 
-export { App };
+export { Table };
