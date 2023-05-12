@@ -5,25 +5,30 @@ class Table extends HtmlComponent {
     super();
     this.datasource = datasource;
     this.datasource = [];
-    this.headers = [{ text: 'Name', key: 'name' }, { text: 'Amount' }];
+    this.headers = [
+      { text: 'Name', key: 'name' },
+      { text: 'Amount', key: 'amount' },
+    ];
   }
 
   async initAsync() {}
 
   async tableHeader() {
     let headersHtml = '';
-    for (const debt of this.datasource) {
-      headersHtml += `<th>${debt.amount}(${debt.name})</th>`;
+    for (const header of this.headers) {
+      headersHtml += `<th>${header.text}</th>`;
     }
     return `<thead><tr>${headersHtml}</tr></thead>`;
   }
 
   async tableBody() {
     let rowsHtml = '';
-    for (const debt of this.datasource) {
-      rowsHtml += `<tr><td>${debt[this.headers[0].key]}</td><td>(${
-        debt.amount
-      })</td></tr>`;
+    for (const record of this.datasource) {
+      rowsHtml += `<tr>`;
+      for (const header of this.headers) {
+        rowsHtml += `<td>${record[header.key]}</td>`;
+      }
+      rowsHtml += `</tr>`;
     }
     return `<tbody>${rowsHtml}</tbody>`;
   }
